@@ -563,6 +563,10 @@
 
     $(document).ready(function() {
       initCourses()
+      $.get("./components/courses/item.html", function(html_string)
+      {
+          alert(html_string);  // this is not Working
+      });
     });
 
 
