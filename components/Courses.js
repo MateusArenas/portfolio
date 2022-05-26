@@ -6,7 +6,7 @@
     const CourseItem = await require("./templates/courses/item.html")
     
     var Courses = () => {
-        const children = data.map(props => CourseItem(props)).join('')
+        const children = data.map(props => CourseItem(props))
         
         return CourseList({ children });
     }

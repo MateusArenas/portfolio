@@ -9,7 +9,7 @@
     
         const childrens = multidata.map(data => data.map(props => ProjectItem({ ...props })))
         
-        const children = childrens.map(props => ProjectSection({ ...props })).join('')
+        const children = childrens.map(props => ProjectSection({ ...props }))
     
         return ProjectList({ children });
     }
