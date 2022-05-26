@@ -14,5 +14,13 @@
         "title": "Shared & Options",
         "usage": "React Native",
         "icon": "fab fa-react"
+    },
+    { 
+        "image1": "./top.gif",
+        "image2": "./bottom.gif",
+        "link": "https://github.com/MateusArenas/portfolio",
+        "title": "Portfólio Builder",
+        "usage": "Javascript",
+        "icon": "fab fa-js"
     }
 ]
