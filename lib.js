@@ -8,7 +8,13 @@ function buildComponent (html, props) {
 
   function require (url) {
     return new Promise((resolve, reject) => {
-        $.get(url, function(data) { resolve(data) });
+        $.get(url, function(data) { 
+          if (typeof data === 'object') {
+            resolve(data) 
+          } else {
+            resolve(props => render(data, props)) 
+          }
+        });
     })
   }
 
