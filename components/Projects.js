@@ -1,4 +1,4 @@
-var Projects = async () => {
+async function Projects () {
     const multidata = await getData("./data/projects.json")
 
     const list = await require("./templates/projects/index.html")
