@@ -1,4 +1,3 @@
-var fs = require('fs');
 
 function render (html, props) {
     return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => props[key] || ' ');
@@ -13,7 +12,9 @@ function render (html, props) {
 
 
 require.extensions['.html'] = function (module, filename) {
-    const html = fs.readFileSync(filename, 'utf8');
+    const html = require('fs').readFileSync(filename, 'utf8');
 
     module.exports = props => render(html, buildProps(props))
 };
+
+module.exports = { buildApp: async (file, html) => require('fs').promises.writeFile(file, html) }
