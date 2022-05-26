@@ -13,7 +13,7 @@ const ExperienceItem = require('../components/experiences/item.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./experiences.html', Index({ 
-    header: Header({}),
+    header: Header({ expStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     experiences: List({ 
         component: Experiences, 

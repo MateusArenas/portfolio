@@ -9,7 +9,7 @@ const About = require('../components/about.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./about.html', Index({ 
-    header: Header({}),
+    header: Header({ aboutStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     about: About(require('../data/about.json')),
 }))

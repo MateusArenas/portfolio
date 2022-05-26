@@ -14,7 +14,7 @@ const ProjectItem = require('../components/projects/item.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./portfolio.html', Index({ 
-    header: Header({}),
+    header: Header({ portStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     projects: List({ 
         component: Projects, 

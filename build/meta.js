@@ -9,7 +9,7 @@ const Meta = require('../components/meta.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./meta.html', Index({ 
-    header: Header({}),
+    header: Header({ metaStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     meta: Meta(require('../data/meta.json')),
 }))

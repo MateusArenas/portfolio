@@ -13,7 +13,7 @@ const FormationItem = require('../components/formations/item.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./formations.html', Index({ 
-    header: Header({}),
+    header: Header({ formStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     formations: List({ 
         component: Formations, 

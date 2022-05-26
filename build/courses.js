@@ -13,7 +13,7 @@ const CourseItem = require('../components/courses/item.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./courses.html', Index({ 
-    header: Header({}),
+    header: Header({ qualyStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     courses: List({ 
         component: Courses, 

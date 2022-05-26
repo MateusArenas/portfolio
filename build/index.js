@@ -25,7 +25,7 @@ const ProjectItem = require('../components/projects/item.html')
 const Index = require("../screens/index.html")
 
 buildHTML('./index.html', Index({ 
-    header: Header({}),
+    header: Header({ iniStyle: "color: blue;" }),
     profile: Profile(require('../data/profile.json')),
     about: About(require('../data/about.json')),
     meta: Meta(require('../data/meta.json')),
