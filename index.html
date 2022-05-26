@@ -287,7 +287,7 @@
   <script type="module" >
 
     function buildComponent (html, props) {
-      return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => props[key]);
+      return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => props[key] || ' ');
     }
 
     function require (url) {
@@ -325,7 +325,7 @@
 
       const childrens = multidata.map(data => data.map(props => buildComponent(item, { ...props })))
       
-      const children = childrens.map(props => buildComponent(section, { 0: '', 1: '', 2: '', ...props })).join('')
+      const children = childrens.map(props => buildComponent(section, { ...props })).join('')
 
       const courses = await buildComponent(list, { children });
 
