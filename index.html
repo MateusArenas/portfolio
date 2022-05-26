@@ -534,12 +534,26 @@
       return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => context[key]);
     }
 
+var courses_component_text;
+
+$.ajax({
+  dataType: "text",
+  url:  "./courses.html",
+  headers: { "Access-Control-Allow-Origin": "*" },
+  success: (data) => {
+    courses_component_text = data;
+    console.log({ data })
+  }
+});
+
+var course_component_text;
 
 $.ajax({
   dataType: "text",
   url:  "./component.html",
   headers: { "Access-Control-Allow-Origin": "*" },
   success: (data) => {
+    course_component_text = data;
     console.log({ data })
   }
 });
@@ -551,18 +565,23 @@ $.ajax({
   success: (data) => {
 
     console.log({ data })
-      var items = [];
-      $.each(data, function( key, val ) {
-        items.push( "<li id='" + key + "'>" + val + "</li>" );
-      });
-    
-      $( "<ul/>", {
-        "class": "my-new-list",
-        html: items.join( "" )
-      }).appendTo( "body" );
-  }
-});
 
+      var items = [];
+      data.forEach(item => {
+        items.push(bindContextToHTMLText(course_component_text, { ...item }));
+      })
+      
+      
+      // $( "<ul/>", {
+      //   "class": "my-new-list",
+      //   html: items.join( "" )
+      // }).appendTo( "body" );
+    }
+  });
+
+  console.log({ bind: bindContextToHTMLText(courses_component_text, { courses: items.join() }) })
+  
+  $("#about").append(bindContextToHTMLText(courses_component_text, { courses: items.join() }))
     // $.getJSON( "./courses.json", function( data ) {
     //   console.log({ data });
     //   var items = [];
