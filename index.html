@@ -198,83 +198,6 @@
               </div>
             </div>
           </div>
-
-          <div id="potfolio" class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                <i class="fas fa-code" style="margin-right: 5px;"></i> Portfólio
-              </p>
-            </header>
-
-            <div class="card-content">
-              <div class="content">
-
-                <div class="columns">
-
-                  
-                  <div class="column is-4">
-                    <div class="card">
-                      <div class="card-image" style="flex-direction: row; display: flex;">
-                        <figure class="image is-4by4" style="margin: 0; width: 50%; height: 50%;">
-                          <img src="./assets/whatsapp.gif" alt="Placeholder image">
-                        </figure>
-                        <figure class="image is-4by4" style="margin: 0; width: 50%; height: 50%;">
-                            <img src="./assets/whatsapp.gif" alt="Placeholder image">
-                          </figure>
-                      </div>
-                      <div class="card-content">
-                        <div class="media">
-                          <div class="media-content">
-                            <a target="_blank" href="https://github.com/MateusArenas/whatsapp-ui">
-                                <div class="content icon-text">
-                                    <p class="title is-5">Whatsapp Clone UI </p>
-                                    <span class="icon"><i class="fa fa-link"></i></span>
-                                  </div>
-                            </a>
-                          </div>
-                        </div>
-                    
-                        <div class="content icon-text">
-                          <span class="icon" style="color: rgb(0, 123, 255);"><i class="fab fa-react"></i></span><p>React Native</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="column is-4">
-                    <div class="card">
-                      <div class="card-image" style="flex-direction: row; display: flex;">
-                        <figure class="image is-4by4" style="margin: 0; width: 50%; height: 50%;">
-                          <img src="./assets/peekandpush.gif" alt="Placeholder image">
-                        </figure>
-                        <figure class="image is-4by4" style="margin: 0; width: 50%; height: 50%;">
-                            <img src="./assets/sharedelement.gif" alt="Placeholder image">
-                          </figure>
-                      </div>
-                      <div class="card-content">
-                        <div class="media">
-                          <div class="media-content">
-                            <a target="_blank" href="https://github.com/MateusArenas/whatsapp-ui">
-                                <div class="content icon-text">
-                                    <p class="title is-5">Shared & Options</p>
-                                    <span class="icon"><i class="fa fa-link"></i></span>
-                                  </div>
-                            </a>
-                          </div>
-                        </div>
-                    
-                        <div class="content icon-text">
-                          <span class="icon" style="color: rgb(0, 123, 255);"><i class="fab fa-react"></i></span><p>React Native</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
           
         </div>
 
@@ -315,28 +238,16 @@
       const html = await getData(url, 'text');
       return buildComponent(html, props)
     }
+  </script>
 
-    async function initProjects () {
-      const multidata = await getData("./data/projects.json")
+<script type="module" src="./components/Projects.js"></script>
 
-      const list = await require("./components/projects/index.html")
-      const section = await require("./components/projects/section.html")
-      const item = await require("./components/projects/item.html")
-
-      const childrens = multidata.map(data => data.map(props => buildComponent(item, { ...props })))
-      
-      const children = childrens.map(props => buildComponent(section, { ...props })).join('')
-
-      const courses = await buildComponent(list, { children });
-
-      $("#about").append(courses)
-    }
-
+<script type="module" >
     async function initCourses () {
       const data = await getData("./data/courses.json")
 
-      const list = await require("./components/courses/index.html")
-      const item = await require("./components/courses/item.html")
+      const list = await require("./templates/courses/index.html")
+      const item = await require("./templates/courses/item.html")
 
       const children = data.map(props => buildComponent(item, props)).join('')
 
@@ -346,7 +257,7 @@
     }
 
     $(document).ready(function() {
-      initProjects()
+      Projects()
       initCourses()
     });
 
