@@ -7,6 +7,9 @@ const { List } = require('./lib/components')
 const About = require('./components/about.html')
 const Meta = require('./components/meta.html')
 
+const Formations = require('./components/formations/index.html')
+const FormationItem = require('./components/formations/item.html')
+
 const Experiences = require('./components/experiences/index.html')
 const ExperienceItem = require('./components/experiences/item.html')
 
@@ -22,6 +25,11 @@ const App = require("./components/app.html")
 buildHTML('./index.html', App({ 
     about: About(require('./data/about.json')),
     meta: Meta(require('./data/meta.json')),
+    formations: List({ 
+        component: Formations, 
+        data: require('./data/formations.json'),
+        item: FormationItem 
+    }),
     experiences: List({ 
         component: Experiences, 
         data: require('./data/experiences.json'),
