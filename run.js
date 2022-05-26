@@ -1,11 +1,27 @@
-const { buildHTML } = require('./lib.js')
+const { buildHTML } = require('./lib')
+const { List, SectionList } = require('./lib/components')
 
-const Projects = require("./templates/Projects.js")
-const Courses = require("./templates/Courses.js")
+const Courses = require('./components/courses/index.html')
+const CourseItem = require('./components/courses/item.html')
+
+const Projects = require('./components/projects/index.html')
+const ProjectSection = require('./components/projects/section.html')
+const ProjectItem = require('./components/projects/item.html')
+
 
 const App = require("./app.html")
 
 buildHTML('./index.html', App({ 
-    projects: Projects({ data: require('./data/projects.json') }), 
-    courses: Courses({ data: require('./data/courses.json') }),
+    projects: List({ 
+        component: Projects, 
+        section: ProjectSection,
+        colluns: 3,
+        data: require('./data/projects.json'),
+        item: ProjectItem 
+    }), 
+    courses: List({ 
+        component: Courses, 
+        data: require('./data/courses.json'),
+        item: CourseItem 
+    })
 }))
