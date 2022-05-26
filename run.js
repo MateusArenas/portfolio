@@ -22,7 +22,7 @@ const Projects = require('./components/projects/index.html')
 const ProjectSection = require('./components/projects/section.html')
 const ProjectItem = require('./components/projects/item.html')
 
-const App = require("./components/app.html")
+const App = require("./screens/app.html")
 
 buildHTML('./index.html', App({ 
     header: Header({}),
