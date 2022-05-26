@@ -1,5 +1,5 @@
 async function Courses () {
-    const data = await getData("./data/courses.json")
+    const data = await require("./data/courses.json")
 
     const list = await require("./templates/courses/index.html")
     const item = await require("./templates/courses/item.html")
