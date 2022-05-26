@@ -579,7 +579,7 @@ $.ajax({
       // }).appendTo( "body" );
     }
   });
-
+console.log({ items })
   console.log(bindContextToHTMLText(courses_component_text, { courses: items.join() }), 'binded')
   
   $("#about").append(bindContextToHTMLText(courses_component_text, { courses: items.join() }))
