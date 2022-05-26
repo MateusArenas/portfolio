@@ -325,7 +325,7 @@
 
       const childrens = multidata.map(data => data.map(props => buildComponent(item, { ...props })))
       
-      const children = childrens.map(props => buildComponent(section, { ...props })).join('')
+      const children = childrens.map(props => buildComponent(section, { 0: '', 1: '', 2: '', ...props })).join('')
 
       const courses = await buildComponent(list, { children });
 
