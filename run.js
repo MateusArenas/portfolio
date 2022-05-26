@@ -1,5 +1,5 @@
 const { buildHTML } = require('./lib')
-const { List, SectionList } = require('./lib/components')
+const { List } = require('./lib/components')
 
 const Courses = require('./components/courses/index.html')
 const CourseItem = require('./components/courses/item.html')
