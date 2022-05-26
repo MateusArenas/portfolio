@@ -5,6 +5,7 @@ useRequireComponents('.html')
 const { List } = require('./lib/components')
 
 const About = require('./components/about.html')
+const Meta = require('./components/meta.html')
 
 const Experiences = require('./components/experiences/index.html')
 const ExperienceItem = require('./components/experiences/item.html')
@@ -20,6 +21,7 @@ const App = require("./components/app.html")
 
 buildHTML('./index.html', App({ 
     about: About(require('./data/about.json')),
+    meta: Meta(require('./data/meta.json')),
     experiences: List({ 
         component: Experiences, 
         data: require('./data/experiences.json'),
