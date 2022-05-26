@@ -534,26 +534,26 @@
       return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => context[key]);
     }
 
-var courses_component_text;
+var courses_text_raw;
 
 $.ajax({
   dataType: "text",
   url:  "./courses.html",
   headers: { "Access-Control-Allow-Origin": "*" },
   success: (courses_text) => {
-    courses_component_text = courses_text;
+    courses_text_raw = courses_text;
     console.log(courses_text)
   }
 });
 
-var course_component_text;
+var component_text_raw;
 
 $.ajax({
   dataType: "text",
   url:  "./component.html",
   headers: { "Access-Control-Allow-Origin": "*" },
   success: (component_text) => {
-    course_component_text = component_text;
+    component_text_raw = component_text;
     console.log(component_text)
   }
 });
@@ -569,7 +569,7 @@ $.ajax({
     console.log({ data })
 
       data.forEach(item => {
-        items.push(bindContextToHTMLText(course_component_text, { ...item }));
+        items.push(bindContextToHTMLText(component_text_raw, { ...item }));
       })
       
       
@@ -579,10 +579,10 @@ $.ajax({
       // }).appendTo( "body" );
     }
   });
-console.log({ items })
-  console.log(bindContextToHTMLText(courses_component_text, { courses: items.join() }), 'binded')
+console.log({ items, courses_text_raw })
+  console.log(bindContextToHTMLText(courses_text_raw, { courses: items.join() }), 'binded')
   
-  $("#about").append(bindContextToHTMLText(courses_component_text, { courses: items.join() }))
+  $("#about").append(bindContextToHTMLText(courses_text_raw, { courses: items.join() }))
     // $.getJSON( "./courses.json", function( data ) {
     //   console.log({ data });
     //   var items = [];
