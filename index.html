@@ -530,7 +530,7 @@
 
   <script type="module" >
 
-    function bindContextToHTMLText (html, props) {
+    function buildComponent (html, props) {
       return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => props[key]);
     }
 
@@ -546,21 +546,17 @@
 
     async function getComponent (url, props) {
       const html = await getData(url, 'text');
-      return bindContextToHTMLText(html, props)
+      return buildComponent(html, props)
     }
 
     async function initCourses () {
       const data = await getData("./data/courses.json")
+      const list = await getData("./components/courses/index.html", 'text')
+      const item = await getData("./components/courses/item.html", 'text')
 
-      const items = await Promise.all(data.map(async props => await getComponent("./components/courses/item.html", props)))
+      const children = data.map(props => buildComponent(item, props)).join('')
 
-      const raw_items = items.join('')
-
-      console.log(raw_items)
-
-      const courses = await getComponent("./components/courses/index.html", { data: raw_items });
-
-      console.log(courses)
+      const courses = await buildComponent(list, { children });
 
       $("#about").append(courses)
     }
