@@ -540,9 +540,9 @@ $.ajax({
   dataType: "text",
   url:  "./courses.html",
   headers: { "Access-Control-Allow-Origin": "*" },
-  success: (data) => {
-    courses_component_text = data;
-    console.log({ data })
+  success: (courses_text) => {
+    courses_component_text = courses_text;
+    console.log({ courses_text: JSON.stringify(courses_text) })
   }
 });
 
@@ -552,9 +552,9 @@ $.ajax({
   dataType: "text",
   url:  "./component.html",
   headers: { "Access-Control-Allow-Origin": "*" },
-  success: (data) => {
-    course_component_text = data;
-    console.log({ data })
+  success: (component_text) => {
+    course_component_text = component_text;
+    console.log({ component_text: JSON.stringify(component_text) })
   }
 });
 
