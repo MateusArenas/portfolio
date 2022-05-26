@@ -1,2 +1,7 @@
 require('./build')
 require('./build/portfolio')
+require('./build/courses')
+require('./build/experiences')
+require('./build/formations')
+require('./build/meta')
+require('./build/about')
