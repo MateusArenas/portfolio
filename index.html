@@ -528,14 +528,38 @@
     </div>
   </section>
 
-  <script >
+  <script type="module" >
+
+    function bindContextToHTMLText (html, context) {
+      return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => context[key]);
+    }
+
+
+$.ajax({
+  dataType: "text",
+  url:  "./component.html",
+  headers: { "Access-Control-Allow-Origin": "*" },
+  success: (data) => {
+    console.log({ data })
+  }
+});
 
 $.ajax({
   dataType: "json",
   url:  "./courses.json",
   headers: { "Access-Control-Allow-Origin": "*" },
   success: (data) => {
+
     console.log({ data })
+      var items = [];
+      $.each(data, function( key, val ) {
+        items.push( "<li id='" + key + "'>" + val + "</li>" );
+      });
+    
+      $( "<ul/>", {
+        "class": "my-new-list",
+        html: items.join( "" )
+      }).appendTo( "body" );
   }
 });
 
