@@ -1,4 +1,7 @@
-const { buildHTML } = require('./lib')
+const { buildHTML, useRequireComponents } = require('./lib')
+
+useRequireComponents('.html')
+
 const { List } = require('./lib/components')
 
 const Courses = require('./components/courses/index.html')
@@ -10,6 +13,7 @@ const ProjectItem = require('./components/projects/item.html')
 
 
 const App = require("./app.html")
+
 
 buildHTML('./index.html', App({ 
     projects: List({ 
