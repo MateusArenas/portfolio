@@ -207,7 +207,7 @@
     </div>
   </section>
 
-  <script type="module" >
+  <script >
 
     function buildComponent (html, props) {
       return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => props[key] || ' ');
@@ -240,9 +240,9 @@
     }
   </script>
 
-<script type="module" src="./components/Projects.js"></script>
+<script src="./components/Projects.js"></script>
 
-<script type="module" >
+<script >
     async function initCourses () {
       const data = await getData("./data/courses.json")
 

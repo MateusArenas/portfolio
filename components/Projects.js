@@ -1,4 +1,4 @@
-async function Projects () {
+var Projects = async () => {
     const multidata = await getData("../data/projects.json")
 
     const list = await require("../templates/projects/index.html")
@@ -13,5 +13,3 @@ async function Projects () {
 
     $("#about").append(courses)
 }
-
-module.exports = Projects
