@@ -215,8 +215,8 @@
 <script >
 
     $(document).ready(async function() {
-      $("#about").append(await Projects())
-      $("#about").append(await Courses())
+      $("#about").append(await Projects({ data: await require("./data/projects.json") }))
+      $("#about").append(await Courses({ data: await require("./data/courses.json") }))
     });
 
   </script>
