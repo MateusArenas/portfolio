@@ -562,6 +562,7 @@
 
     async function initCourses () {
       const data = await getData("./data/courses.json")
+      
       const list = await require("./components/courses/index.html")
       const item = await require("./components/courses/item.html")
 
