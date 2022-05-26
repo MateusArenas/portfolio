@@ -1,4 +1,4 @@
-var projects = [
+module.exports = [
     [
         { 
             "image1": "./assets/whatsapp.gif",

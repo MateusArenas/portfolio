@@ -1,3 +1,5 @@
+const { required, buildProps, get, render } = require("../utils.js")
+
 async function Projects ({ data }) {
     const ProjectList = await required("./templates/projects/index.html")
     const ProjectSection = await required("./templates/projects/section.html")
@@ -9,3 +11,5 @@ async function Projects ({ data }) {
         children: childrens.map(props => ProjectSection({ ...props }))
     });
 }
+
+    module.exports = Projects;
