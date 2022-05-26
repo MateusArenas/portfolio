@@ -1,15 +1,23 @@
+async function ProjectSection (props) {
+    const section = await require("./templates/projects/section.html")
+
+    return render(section, props)
+}
+
+async function ProjectItem (props) {
+    const item = await require("./templates/projects/item.html")
+
+    return render(item, props)
+}
+
 async function Projects () {
     const multidata = await require("./data/projects.json")
 
     const list = await require("./templates/projects/index.html")
-    const section = await require("./templates/projects/section.html")
-    const item = await require("./templates/projects/item.html")
 
-    const childrens = multidata.map(data => data.map(props => buildComponent(item, { ...props })))
+    const childrens = multidata.map(data => data.map(props => ProjectItem({ ...props })))
     
-    const children = childrens.map(props => buildComponent(section, { ...props })).join('')
+    const children = childrens.map(props => ProjectSection({ ...props })).join('')
 
-    const courses = await buildComponent(list, { children });
-
-    $("#about").append(courses)
+    return render(list, { children });
 }

@@ -1,4 +1,4 @@
-async function Course (props) {
+async function CourseItem (props) {
     const item = await require("./templates/courses/item.html")
 
     return render(item, props)
@@ -10,7 +10,7 @@ async function Courses () {
 
     const list = await require("./templates/courses/index.html")
 
-    const children = data.map(props => Course(props)).join('')
+    const children = data.map(props => CourseItem(props)).join('')
 
     return render(list, { children });
 }
