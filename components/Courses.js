@@ -10,7 +10,7 @@ async function Courses () {
 
     const list = await require("./templates/courses/index.html")
 
-    const children = await Promise.all(data.map(props => CourseItem(props))).join('')
+    const children = data.map(props => CourseItem(props)).join('')
 
     return render(list, { children });
 }
