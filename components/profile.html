@@ -1,0 +1,50 @@
+<div class="column">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by4">
+          <img src="{{image}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{name}}</p>
+            <span class="tag is-dark is-medium">
+              <i class="{{knowIcon}}" style="margin-right: 10px;"></i>
+              {{know}}</span>
+          </div>
+        </div>
+    
+        <div class="content">
+          <p>
+            <i class="fas fa-user"></i>
+            {{origin}}
+          </p>
+          <p>
+            <i class="fas fa-compass"></i>
+            {{location}}
+          </p>
+          <br/>
+
+          <i class="fab fa-github"></i>
+          <label>Github:</label>
+          <br/>
+          <a href="{{github}}" target="_blank">{{github}}</a>
+          <br/>
+          <br/>
+
+          <i class="fas fa-phone"></i>
+          <label>Telefone:</label>
+          <br/>
+          <a href="tel:+{{phone}}" target="_blank">{{phone}}</a>
+          <br/>
+          <br/>
+          <i class="fas fa-envelope"></i>
+          <label>Email:</label>
+          <br/>
+          <a href="mailto:{{email}}" target="_blank">{{email}}</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
