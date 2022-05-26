@@ -558,6 +558,8 @@ $.ajax({
   }
 });
 
+var items = [];
+
 $.ajax({
   dataType: "json",
   url:  "./courses.json",
@@ -566,7 +568,6 @@ $.ajax({
 
     console.log({ data })
 
-      var items = [];
       data.forEach(item => {
         items.push(bindContextToHTMLText(course_component_text, { ...item }));
       })
@@ -579,7 +580,7 @@ $.ajax({
     }
   });
 
-  console.log({ bind: bindContextToHTMLText(courses_component_text, { courses: items.join() }) })
+  console.log(bindContextToHTMLText(courses_component_text, { courses: items.join() }), 'binded')
   
   $("#about").append(bindContextToHTMLText(courses_component_text, { courses: items.join() }))
     // $.getJSON( "./courses.json", function( data ) {
