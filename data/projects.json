@@ -20,7 +20,7 @@
         "image2": "./bottom.gif",
         "link": "https://github.com/MateusArenas/portfolio",
         "title": "Portfólio Builder",
-        "usage": "Javascript",
+        "usage": "Node",
         "icon": "fab fa-node"
     }
 ]
