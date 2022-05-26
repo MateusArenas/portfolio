@@ -530,71 +530,43 @@
 
   <script type="module" >
 
-    function bindContextToHTMLText (html, context) {
-      return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => context[key]);
+    function bindContextToHTMLText (html, props) {
+      return html.replace(/\{\{([a-z0-9]+)\}\}/gi, (match, key) => props[key]);
     }
 
-var courses_text_raw;
-
-$.ajax({
-  dataType: "text",
-  url:  "./courses.html",
-  headers: { "Access-Control-Allow-Origin": "*" },
-  success: (courses_text) => {
-    courses_text_raw = courses_text;
-    console.log(courses_text)
-  }
-});
-
-var component_text_raw;
-
-$.ajax({
-  dataType: "text",
-  url:  "./component.html",
-  headers: { "Access-Control-Allow-Origin": "*" },
-  success: (component_text) => {
-    component_text_raw = component_text;
-    console.log(component_text)
-  }
-});
-
-var items = [];
-
-$.ajax({
-  dataType: "json",
-  url:  "./courses.json",
-  headers: { "Access-Control-Allow-Origin": "*" },
-  success: (data) => {
-
-    console.log({ data })
-
-      data.forEach(item => {
-        items.push(bindContextToHTMLText(component_text_raw, { ...item }));
+    function getData (url, dataType="json") {
+      return new Promise((resolve, reject) => {
+        $.ajax({
+            dataType, url, headers: { "Access-Control-Allow-Origin": "*" },
+            success: (data) => resolve(data),
+            error: (err) => reject(err), 
+          });
       })
-      
-      
-      // $( "<ul/>", {
-      //   "class": "my-new-list",
-      //   html: items.join( "" )
-      // }).appendTo( "body" );
     }
-  });
-console.log({ items, courses_text_raw })
-  console.log(bindContextToHTMLText(courses_text_raw, { courses: items.join() }), 'binded')
-  
-  $("#about").append(bindContextToHTMLText(courses_text_raw, { courses: items.join() }))
-    // $.getJSON( "./courses.json", function( data ) {
-    //   console.log({ data });
-    //   var items = [];
-    //   $.each(data, function( key, val ) {
-    //     items.push( "<li id='" + key + "'>" + val + "</li>" );
-    //   });
-    
-    //   $( "<ul/>", {
-    //     "class": "my-new-list",
-    //     html: items.join( "" )
-    //   }).appendTo( "body" );
-    // });
+
+    async function getComponent (url, props) {
+      const html = await getData(url, 'text');
+      return bindContextToHTMLText(html, props)
+    }
+
+    async function init () {
+      const data = await getData("./courses.json")
+
+      const items = await Promise.all(data.map(async props => await getComponent("./component.html", props)))
+
+      const raw_items = items.join('')
+
+      console.log(raw_items)
+
+      const courses = await getComponent("./courses.html", { courses: raw_items });
+
+      console.log(courses)
+
+      $("#about").append(courses)
+    }
+
+    init()
+
   </script>
 </body>
 </html>
