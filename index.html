@@ -542,7 +542,7 @@ $.ajax({
   headers: { "Access-Control-Allow-Origin": "*" },
   success: (courses_text) => {
     courses_component_text = courses_text;
-    console.log({ courses_text: JSON.stringify(courses_text) })
+    console.log(courses_text)
   }
 });
 
@@ -554,7 +554,7 @@ $.ajax({
   headers: { "Access-Control-Allow-Origin": "*" },
   success: (component_text) => {
     course_component_text = component_text;
-    console.log({ component_text: JSON.stringify(component_text) })
+    console.log(component_text)
   }
 });
 
