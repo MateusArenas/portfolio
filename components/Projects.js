@@ -1,7 +1,7 @@
 async function Projects ({ data }) {
-    const ProjectList = await require("./templates/projects/index.html")
-    const ProjectSection = await require("./templates/projects/section.html")
-    const ProjectItem = await require("./templates/projects/item.html")
+    const ProjectList = await required("./templates/projects/index.html")
+    const ProjectSection = await required("./templates/projects/section.html")
+    const ProjectItem = await required("./templates/projects/item.html")
     
     const childrens = data.map(section => section.map(props => ProjectItem({ ...props })))
     
@@ -9,3 +9,5 @@ async function Projects ({ data }) {
         children: childrens.map(props => ProjectSection({ ...props }))
     });
 }
+
+module.exports = Projects;

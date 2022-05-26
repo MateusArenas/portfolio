@@ -212,13 +212,7 @@
 <script src="./components/Projects.js"></script>
 <script src="./components/Courses.js"></script>
 
-<script >
+<script type="module" src="./index.js"></script>
 
-    $(document).ready(async function() {
-      $("#about").append(await Projects({ data: await require("./data/projects.json") }))
-      $("#about").append(await Courses({ data: await require("./data/courses.json") }))
-    });
-
-  </script>
 </body>
 </html>
