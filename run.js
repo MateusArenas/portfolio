@@ -4,6 +4,7 @@ useRequireComponents('.html')
 
 const { List } = require('./lib/components')
 
+const Header = require('./components/header.html')
 const Profile = require('./components/profile.html')
 const About = require('./components/about.html')
 const Meta = require('./components/meta.html')
@@ -24,6 +25,7 @@ const ProjectItem = require('./components/projects/item.html')
 const App = require("./components/app.html")
 
 buildHTML('./index.html', App({ 
+    header: Header({}),
     profile: Profile(require('./data/profile.json')),
     about: About(require('./data/about.json')),
     meta: Meta(require('./data/meta.json')),
