@@ -9,5 +9,3 @@ async function Projects ({ data }) {
         children: childrens.map(props => ProjectSection({ ...props }))
     });
 }
-
-module.exports = Projects;

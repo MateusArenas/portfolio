@@ -6,5 +6,3 @@ async function Courses ({ data }) {
         children: data.map(props => CourseItem({ ...props })) 
     });
 }
-
-module.exports = Courses;
