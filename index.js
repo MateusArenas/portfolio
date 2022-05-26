@@ -1,9 +1,9 @@
 
-const Projects = require('./components/Projects')
-const Courses = require('./components/Courses')
+const Projects = require('./components/Projects.js')
+const Courses = require('./components/Courses.js')
 
-const projects = require("./data/projects.json")
-const courses = require("./data/courses.json")
+const projects = require("./data/projects.js")
+const courses = require("./data/courses.js")
 
 $(document).ready(async function() {
 
