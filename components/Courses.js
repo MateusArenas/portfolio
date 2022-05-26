@@ -7,4 +7,4 @@ async function Courses ({ data }) {
     });
 }
 
-export default  Courses;
+module.exports = Courses;

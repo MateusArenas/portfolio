@@ -1,4 +1,4 @@
-export default  [
+module.exports = [
     [
         { 
             "image1": "./assets/whatsapp.gif",
