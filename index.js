@@ -1,9 +1,9 @@
 
-import Projects from './components/Projects.js';
-import Courses from './components/Courses.js';
+const Projects = require('./components/Projects.js')
+const Courses = require('./components/Courses.js')
 
-import projects from "./data/projects.js";
-import courses from "./data/courses.js";
+const projects = require("./data/projects.js")
+const courses = require("./data/courses.js")
 
 $(document).ready(async function() {
 
