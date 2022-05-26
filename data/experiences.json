@@ -1,0 +1,17 @@
+[
+    {
+        "company": "Ploomes Empresa de Software",
+        "work": "Estagiário em Desenvolvimento Javascript (3 Meses)",
+        "about": "No tempo dentro da empresa, passei a assumir a responsabilidade de criar testes unitários para o front-end e resolver bugs e criação de features para o sistema, participando de sprints, utilizando a IDE (Microsoft – VS Code ), Frameworks ( AngularJS -  Jasmine),  tudo na linguagem Javascript. Devido ter sido minha primeira experiência em uma empresa de grande porte foi me agregado muito conhecimento, e técnicas mais usadas do mercado, e me deu novas metas a alcançar devido a experiência dentro da empresa."
+    },
+    {
+        "company": "Agência Identidade Digital",
+        "work": "Estagiário em Desenvolvimento Web (9 Meses)",
+        "about": "Dentro da empresa fui responsável pela escolha de layouts, construção e ajustes utilizando HTML e CSS, levantamento de requisitos, edição e tratamento de Imagens, passei a assumir a responsabilidade de construir e-commerces utilizando Woocommerce e outros plugins do Wordpress, utilizando a IDE (Microsoft – VS Code ), Frameworks ( Bootstrap - Laravel - Slim ), utilizando PHP e Javascript. Foi me agregado muito conhecimento, além de melhorar minha produtividade devido a prazos, e por ter me proporcionado mais proximidade com clientes."
+    },
+    {
+        "company": "Freelancer",
+        "work": "Em Desenvolvimento Web (5 Meses até o momento)",
+        "about": "Fui responsável por diversas tarefas, assim como implementações simples quanto avançadas, sendo na parte visual e mecânica e na parte de dados, atuação em migração de servidor e configuração."
+    }
+]
