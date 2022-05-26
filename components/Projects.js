@@ -10,4 +10,4 @@ async function Projects ({ data }) {
     });
 }
 
-module.exports = Projects;
+export default  Projects;
