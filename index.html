@@ -550,15 +550,15 @@
     }
 
     async function init () {
-      const data = await getData("./courses.json")
+      const data = await getData("./data/courses.json")
 
-      const items = await Promise.all(data.map(async props => await getComponent("./component.html", props)))
+      const items = await Promise.all(data.map(async props => await getComponent("./courses/item.html", props)))
 
       const raw_items = items.join('')
 
       console.log(raw_items)
 
-      const courses = await getComponent("./courses.html", { courses: raw_items });
+      const courses = await getComponent("./courses/index.html", { courses: raw_items });
 
       console.log(courses)
 
