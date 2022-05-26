@@ -12,7 +12,7 @@ const ProjectSection = require('./components/projects/section.html')
 const ProjectItem = require('./components/projects/item.html')
 
 
-const App = require("./app.html")
+const App = require("./components/app.html")
 
 
 buildHTML('./index.html', App({ 
