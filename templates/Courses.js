@@ -1,5 +1,5 @@
-const CourseList = require("../templates/courses/index.html")
-const CourseItem = require("../templates/courses/item.html")
+const CourseList = require("../components/courses/index.html")
+const CourseItem = require("../components/courses/item.html")
 
 function Courses ({ data }) {
     

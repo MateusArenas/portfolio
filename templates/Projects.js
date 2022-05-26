@@ -1,6 +1,6 @@
-const ProjectList = require("../templates/projects/index.html")
-const ProjectSection = require("../templates/projects/section.html")
-const ProjectItem = require("../templates/projects/item.html")
+const ProjectList = require("../components/projects/index.html")
+const ProjectSection = require("../components/projects/section.html")
+const ProjectItem = require("../components/projects/item.html")
 
 function Projects ({ data }) {
     

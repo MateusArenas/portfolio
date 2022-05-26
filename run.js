@@ -1,7 +1,7 @@
 const { buildHTML } = require('./lib.js')
 
-const Projects = require("./components/Projects.js")
-const Courses = require("./components/Courses.js")
+const Projects = require("./templates/Projects.js")
+const Courses = require("./templates/Courses.js")
 
 const App = require("./app.html")
 
