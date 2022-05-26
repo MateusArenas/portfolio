@@ -1,12 +1,11 @@
-const { required, buildProps, get, render } = require('../utils.js')
+const CourseList = require("../templates/courses/index.html")
+const CourseItem = require("../templates/courses/item.html")
 
-async function Courses ({ data }) {
-    const CourseList = await required("./templates/courses/index.html")
-    const CourseItem = await required("./templates/courses/item.html")
+function Courses ({ data }) {
     
     return CourseList({ 
         children: data.map(props => CourseItem({ ...props })) 
     });
 }
 
-    module.exports = Courses;
+module.exports = Courses;

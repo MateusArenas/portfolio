@@ -1,8 +1,5 @@
-const fs = require('fs');
-
-  
-
-  const { required, buildProps, get, render } = require("./utils.js")
+var fs = require('fs');
+require('./lib.js')
 
   const Projects = require("./components/Projects.js")
   const Courses = require("./components/Courses.js")
@@ -10,20 +7,14 @@ const fs = require('fs');
   const data_projects = require('./data/projects.js')
   const data_courses = require('./data/courses.js')
 
+  const App = require("./app.html")
+
 async function main ()  {
     try {
-        
-    
-        const projects = await Projects({ data: data_projects })
-        const courses = await Courses({ data: data_courses })
-
-        const App = await required("./app.html")
-
-        console.log(App({})?.length, App({  projects, courses })?.length);
-        console.log({ projects: typeof projects, courses:typeof courses });
-        // console.log(App({ projects, courses }));
-    
-        await fs.promises.writeFile('./index.html', App({ projects, courses }))
+        await fs.promises.writeFile('./index.html', App({ 
+            projects: Projects({ data: data_projects }), 
+            courses: Courses({ data: data_courses })
+        }))
     } catch (err) {
         console.log(err);
     }
