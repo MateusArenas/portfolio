@@ -17,4 +17,4 @@ require.extensions['.html'] = function (module, filename) {
     module.exports = props => render(html, buildProps(props))
 };
 
-module.exports = { buildApp: async (file, html) => require('fs').promises.writeFile(file, html) }
+module.exports = { buildHTML: async (file, html) => require('fs').promises.writeFile(file, html) }
