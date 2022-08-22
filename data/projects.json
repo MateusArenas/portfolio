@@ -22,5 +22,13 @@
         "title": "Portfólio Builder",
         "usage": "Node JS",
         "icon": "fab fa-node"
+    },
+    { 
+        "image1": "./insta-delivery.gif",
+        "image2": "./insta-delivery.gif",
+        "link": "https://github.com/MateusArenas/insta-delivery",
+        "title": "Insta Delivery",
+        "usage": "Next JS",
+        "icon": "fab fa-node"
     }
 ]
