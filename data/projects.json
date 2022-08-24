@@ -24,8 +24,8 @@
         "icon": "fab fa-node"
     },
     { 
-        "image1": "./insta-delivery.gif",
-        "image2": "./insta-delivery.gif",
+        "image1": "./assets/insta-delivery.gif",
+        "image2": "./assets/insta-delivery.gif",
         "link": "https://github.com/MateusArenas/insta-delivery",
         "title": "Insta Delivery",
         "usage": "Next JS",
