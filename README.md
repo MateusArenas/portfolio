@@ -1,7 +1,7 @@
 ﻿# Portfólio
 
 
-https://mateusarenas.github.io/portfolio/portfolio.html
+https://mateusarenas.github.io/portfolio
 
 Preview demo
 </br>
